@@ -3,13 +3,6 @@ from time import sleep
 
 portal = Serial('COM6', 9600)
 sleep(1.6)
-leds = ('',
-    'red',
-    'yellow',
-    'green',
-    'blue',
-    'white'
-)
 
 for status in __import__('sys').argv[1].split(','):
     portal.write(bytes(status, 'utf-8'))
